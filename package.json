@@ -1,10 +1,10 @@
 {
   "name": "logr",
-  "version": "0.0.1",
-  "description": "very simple logging with log level filter",
-  "main": "index.js",
+  "version": "0.0.2",
+  "description": "Customisable logger with log level filter and tagged messages.",
+  "main": "logr.js",
   "scripts": {
-    "test": "xo && mocha"
+    "test": "mocha"
   },
   "keywords": [
     "log",
