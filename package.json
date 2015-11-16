@@ -1,0 +1,26 @@
+{
+  "name": "logr",
+  "version": "0.0.1",
+  "description": "very simple logging with log level filter",
+  "main": "index.js",
+  "scripts": {
+    "test": "xo && mocha"
+  },
+  "keywords": [
+    "log",
+    "logging",
+    "logger",
+    "console"
+  ],
+  "author": "stigok",
+  "license": "SEE LICENSE IN LICENSE",
+  "xo": {
+    "space": true
+  },
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "mocha": "^2.3.3",
+    "sinon": "^1.17.2",
+    "sinon-chai": "^2.8.0"
+  }
+}
