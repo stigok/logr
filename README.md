@@ -7,10 +7,14 @@ All logging methods works just like [`util.format()`](https://nodejs.org/api/uti
 
     var Logger = require('logr');
     var logger = new Logger();
-    logger.error('message')
-    logger.warn('message')
+
+    logger.error('prints to stderr')
+    logger.warn('prints to stderr')
     logger.info('prints to stdout');
     logger.log('alias for info');
+    logger.verbose('prints to stdout')
+    logger.debug('prints to stdout')
+    logger.silly('prints to stdout')
 
 You can override how and where the logger prints by setting `logger.stdout` and
 `logger.stderr`. It is expected to be a function called with a single parameter
