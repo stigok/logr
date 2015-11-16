@@ -1,4 +1,4 @@
-# logr
+# logr [![Build Status](https://travis-ci.org/stigok/logr.svg)](https://travis-ci.org/stigok/logr)
 Customisable logger with log level filter and tagged messages.
 
 ## Usage
@@ -16,9 +16,11 @@ You can override how and where the logger prints by setting `logger.stdout` and
 `logger.stderr`. It is expected to be a function called with a single parameter
 `msg`.
 
-## Examples with writing errors to file
+## Examples
 
-    // Don't print anything more verbose than 'warn'
+### Write errors to file
+
+    // Ignore anything but warn and error
     var logger = new Logger('warn');
     var fs = require('fs');
 
