@@ -20,9 +20,9 @@ You can override how and where the logger prints by setting `logger.stdout` and
 `logger.stderr`. It is expected to be a function called with a single parameter
 `msg`.
 
-## Examples
+### Examples
 
-### Write errors to file
+#### Write errors to file
 
     // Ignore anything but warn and error
     var logger = new Logger('warn');
