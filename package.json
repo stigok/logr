@@ -2,7 +2,7 @@
   "name": "logr",
   "version": "0.0.1",
   "description": "Customisable logger with log level filter and tagged messages.",
-  "main": "index.js",
+  "main": "logr.js",
   "scripts": {
     "test": "mocha"
   },

@@ -4,7 +4,7 @@ var sinon = require('sinon')
 chai.use(require('sinon-chai'))
 
 var helpers = require('../helpers.js')
-var Logger = require('../logger.js')
+var Logger = require('../logr.js')
 
 describe('logger', function () {
 
