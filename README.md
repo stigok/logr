@@ -1,25 +1,33 @@
+# logr
+Customisable logger with log level filter and tagged messages.
+
 ## Usage
 
-You can override where the logger prints by setting `logger.stdout` and
+All logging methods works just like [`util.format()`](https://nodejs.org/api/util.html#util_util_format_format)
+
+    var Logger = require('logr');
+    var logger = new Logger();
+    logger.error('message')
+    logger.warn('message')
+    logger.info('prints to stdout');
+    logger.log('alias for info');
+
+You can override how and where the logger prints by setting `logger.stdout` and
 `logger.stderr`. It is expected to be a function called with a single parameter
-`msg`
+`msg`.
 
-## Examples
-### Write to file
+## Examples with writing errors to file
 
-    var logger = new Logger();
+    // Don't print anything more verbose than 'warn'
+    var logger = new Logger('warn');
+    var fs = require('fs');
+
     logger.stderr = function (line) {
-      fs.appendFile('error.log', line);
-    }
+      fs.appendFile('error.log', line + '\n');
 
-### Write a debug log with timestamps and error level
+      // And print to stdout instead of stderr
+      Logger.prototype.stdout(line);
+    };
 
-    var logger = new Logger();
-    function write (msg) {
-      Logger.prototype.stdout.call(this, '[%d] %s', Date.now().getTime(), msg);
-    }
-
-    logger.stdout = write;
-    logger.stderr = write;
-
-    logger.info('Hello, info!')
+    logger.log('This message will be ignored completely');
+    logger.error('However, this would print to stdout and file')
