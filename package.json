@@ -1,6 +1,6 @@
 {
   "name": "logr",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Customisable logger with log level filter and tagged messages.",
   "main": "logr.js",
   "scripts": {
