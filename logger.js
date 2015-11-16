@@ -83,6 +83,16 @@ Logger.prototype.verbose = function () {
   this._log.apply(this, args);
 };
 
+Logger.prototype.debug = function () {
+  var args = helpers.prependArguments(levels.indexOf('debug'), arguments);
+  this._log.apply(this, args);
+};
+
+Logger.prototype.silly = function () {
+  var args = helpers.prependArguments(levels.indexOf('silly'), arguments);
+  this._log.apply(this, args);
+};
+
 // Alias for Logger.info
 Logger.prototype.log = function () {
   this.info.apply(this, arguments);

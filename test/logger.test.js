@@ -81,6 +81,18 @@ describe('logger', function () {
       expect(logger.stdout.calledWith('msg'))
       expect(logger.stderr.called).to.be.false
     })
+    it('should log "debug" to stdout', function () {
+      logger.log('debug')
+      expect(logger.stdout.calledOnce)
+      expect(logger.stdout.calledWith('msg'))
+      expect(logger.stderr.called).to.be.false
+    })
+    it('should log "silly" to stdout', function () {
+      logger.silly('msg')
+      expect(logger.stdout.calledOnce)
+      expect(logger.stdout.calledWith('msg'))
+      expect(logger.stderr.called).to.be.false
+    })
   })
 
   describe('omits messages with higher log level than specified', function () {
