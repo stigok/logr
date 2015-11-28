@@ -56,11 +56,11 @@ Logger.prototype._log = function (level) {
 };
 
 Logger.prototype.stdout = function (msg) {
-  console.log(msg);
+  process.stdout.write(msg);
 };
 
 Logger.prototype.stderr = function (err) {
-  console.error(err);
+  process.stderr.write(err);
 };
 
 Logger.prototype.error = function () {
